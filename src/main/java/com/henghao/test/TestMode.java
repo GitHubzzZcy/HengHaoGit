@@ -11,7 +11,7 @@ public class TestMode {
     public static void main(String[] args) {
 
         System.out.println("hello idea!");
-        System.out.println("hello idea! hello git");
+        System.out.println("hello idea! hello git!");
     }
 
 }
