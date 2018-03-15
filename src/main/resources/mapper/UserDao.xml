@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+
+<mapper namespace="com.henghao.dao.IUserDao">
+
+    <select id="selectUser" resultType="com.henghao.model.User" parameterType="long">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <select id="queryUserAll" resultType="java.util.HashMap">
+        SELECT * FROM user
+    </select>
+    <insert id="addUser" parameterType="com.henghao.model.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT  INTO user (email,password,username,role,status,regTime,regIp) VALUES (#{email},#{password},#{username},#{role},#{status},#{regTime},#{regIp})
+    </insert>
+    <select id="queryObjTest" resultType="com.henghao.model.User" parameterType="long">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+    <update id="updateUserEntiyty" parameterType="com.henghao.model.User" >
+        UPDATE  user SET email = #{email}
+                        ,password = #{password}
+                        ,username = #{username}
+                        ,role = #{role}
+                        ,status = #{status}
+                        ,regTime = #{regTime}
+                        ,regIp = #{regIp}
+        WHERE id=#{id}
+    </update>
+    <delete id="deleteUserById" parameterType="long">
+        DELETE FROM  user WHERE id = #{id}
+    </delete>
+</mapper>

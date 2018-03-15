@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="anjian:war">
+    <output-path>$PROJECT_DIR$/anjian/target</output-path>
+    <root id="archive" name="anjian.war">
+      <element id="artifact" artifact-name="anjian:war exploded" />
+    </root>
+  </artifact>
+</component>
